@@ -1,0 +1,1984 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Galflux - Galvanizado por inmersión en caliente para piezas industriales. Soluciones técnicas para agro, construcción, infraestructura e industria." />
+  <title>Galflux | Galvanizado por inmersión en caliente</title>
+  <style>
+    :root {
+      --black: #050505;
+      --charcoal: #1e1e1e;
+      --gray: #6f6f6f;
+      --light-gray: #f4f4f4;
+      --white: #ffffff;
+      --cyan: #00bff3;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.2);
+      --container: min(1180px, 92vw);
+      --header-height: 84px;
+      --transition: all 0.28s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--charcoal);
+      background: var(--white);
+      line-height: 1.55;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: var(--container);
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 90px 0;
+      position: relative;
+    }
+
+    section[id] {
+      scroll-margin-top: calc(var(--header-height) + 12px);
+    }
+
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.5rem);
+      line-height: 1.15;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      margin-bottom: 18px;
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }
+
+    .section-subtitle {
+      color: var(--gray);
+      max-width: 850px;
+      font-size: 1.05rem;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 13px 22px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      min-height: 46px;
+      white-space: normal;
+      text-align: center;
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid rgba(0, 191, 243, 0.45);
+      outline-offset: 2px;
+    }
+
+    .btn-primary {
+      background: var(--cyan);
+      color: var(--black);
+      border-color: var(--cyan);
+    }
+
+    .btn-primary:hover {
+      background: #35cdf8;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(255, 255, 255, 0.5);
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .btn-dark {
+      border-color: var(--charcoal);
+      color: var(--charcoal);
+      background: transparent;
+    }
+
+    .btn-dark:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(0, 191, 243, 0.12);
+      color: var(--cyan);
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: var(--header-height);
+      background: rgba(5, 5, 5, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+    }
+
+    .header-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .logo img {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      color: var(--white);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--white);
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav a {
+      position: relative;
+      opacity: 0.88;
+      transition: var(--transition);
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 100%;
+      height: 2px;
+      background: var(--cyan);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      opacity: 1;
+    }
+
+    .nav a:hover::after,
+    .nav a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-whatsapp-mini {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      transition: var(--transition);
+      background: transparent;
+    }
+
+    .btn-whatsapp-mini:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+    }
+
+    .mobile-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      background: rgba(5, 5, 5, 0.98);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 4vw 24px;
+      max-height: calc(100dvh - var(--header-height));
+      overflow-y: auto;
+    }
+
+    .mobile-menu ul {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .mobile-menu a {
+      color: var(--white);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .mobile-menu.open {
+      display: block;
+    }
+
+    .hero {
+      min-height: calc(100dvh - var(--header-height));
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      background:
+        linear-gradient(115deg, rgba(5, 5, 5, 0.86), rgba(5, 5, 5, 0.58)),
+        radial-gradient(circle at 10% 20%, rgba(0, 191, 243, 0.2), transparent 32%),
+  url('./assets/hero-galflux-fondo.jpg') center/cover no-repeat,
+  url('./assets/hero-galvanizado.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #111 0%, #2a2a2a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: end;
+      padding: 80px 0 70px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.6rem);
+      line-height: 1.08;
+      text-transform: uppercase;
+      letter-spacing: 0.015em;
+      margin-bottom: 20px;
+      max-width: 880px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 750px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 1.08rem;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions .btn {
+      min-width: 228px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-md);
+      padding: 16px 16px;
+      -webkit-backdrop-filter: blur(4px);
+      backdrop-filter: blur(4px);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 4px;
+    }
+
+    .stat-card span {
+      font-size: 0.88rem;
+      color: rgba(255, 255, 255, 0.86);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .value-strip {
+      background: var(--light-gray);
+    }
+
+    .cards-4 {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .value-card {
+      background: var(--white);
+      border: 1px solid #e5e5e5;
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+
+    .value-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+
+    .value-card h3 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+
+    .value-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .service {
+      background:
+        linear-gradient(110deg, rgba(5, 5, 5, 0.92), rgba(30, 30, 30, 0.86)),
+  url('./assets/galvanizado-piezas.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #0d0d0d 0%, #2b2b2b 100%);
+      color: var(--white);
+    }
+
+    .service .section-subtitle {
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .service-media {
+      min-height: 350px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.55)),
+  url('./assets/piezas-metalicas.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #222, #666);
+    }
+
+    .service-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border: 1px solid rgba(0, 191, 243, 0.28);
+      border-radius: inherit;
+      pointer-events: none;
+    }
+
+    .benefits {
+      margin: 22px 0 30px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .benefits li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .benefits li::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      margin-top: 8px;
+      background: var(--cyan);
+      flex: none;
+    }
+
+    .industries {
+      background: #fafafa;
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .industry-card {
+      padding: 22px;
+      border-radius: var(--radius-md);
+      border: 1px solid #e4e4e4;
+      background: var(--white);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .industry-card::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: var(--cyan);
+      transform: scaleY(0.2);
+      transform-origin: top;
+      transition: transform 0.26s ease;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-soft);
+      border-color: #d7d7d7;
+    }
+
+    .industry-card:hover::before {
+      transform: scaleY(1);
+    }
+
+    .industry-card h3 {
+      font-size: 0.98rem;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+    }
+
+    .industry-card p {
+      color: var(--gray);
+      font-size: 0.92rem;
+    }
+
+    .capacity {
+      background: var(--white);
+    }
+
+    .capacity-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .capacity-main {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(160deg, rgba(0, 191, 243, 0.11), rgba(0, 0, 0, 0.01));
+      border: 1px solid #e7e7e7;
+    }
+
+    .capacity-main p {
+      color: #454545;
+      margin-top: 10px;
+      margin-bottom: 22px;
+      max-width: 60ch;
+    }
+
+    .capacity-blocks {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .capacity-item {
+      border: 1px solid #e1e1e1;
+      border-radius: var(--radius-md);
+      padding: 16px;
+      min-height: 120px;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .capacity-item::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--cyan), transparent);
+    }
+
+    .capacity-item h3 {
+      text-transform: uppercase;
+      font-size: 0.86rem;
+      letter-spacing: 0.045em;
+      margin-bottom: 8px;
+    }
+
+    .capacity-item p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    .capacity-visual {
+      border-radius: var(--radius-lg);
+      border: 1px solid #e4e4e4;
+      min-height: 100%;
+      background:
+        linear-gradient(150deg, rgba(5, 5, 5, 0.82), rgba(5, 5, 5, 0.5)),
+  url('./assets/batea-industrial.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #111, #4b4b4b);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .capacity-visual::after {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(0, 191, 243, 0.45);
+      border-radius: 14px;
+    }
+
+    .process {
+      background: var(--charcoal);
+      color: var(--white);
+    }
+
+    .process .section-subtitle {
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 12px;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 36px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 19px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(0, 191, 243, 0.8), rgba(0, 191, 243, 0.18));
+    }
+
+    .step {
+      position: relative;
+      padding-top: 42px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 40px 14px 16px;
+      min-height: 220px;
+    }
+
+    .step-number {
+      position: absolute;
+      top: 10px;
+      left: 14px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--cyan);
+      color: var(--black);
+      font-size: 0.72rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .step h3 {
+      font-size: 0.84rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      min-height: 50px;
+    }
+
+    .step p {
+      font-size: 0.86rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.77);
+    }
+
+    .about {
+      background: var(--light-gray);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .about-map {
+      min-height: 320px;
+      border-radius: var(--radius-lg);
+      border: 1px solid #d8d8d8;
+      background:
+        radial-gradient(circle at 35% 55%, rgba(0, 191, 243, 0.3) 0%, transparent 20%),
+        linear-gradient(145deg, #fff, #ededed);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-map::before,
+    .about-map::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(30, 30, 30, 0.14);
+    }
+
+    .about-map::before {
+      inset: 18px;
+      border-radius: 16px;
+    }
+
+    .about-map::after {
+      width: 40%;
+      height: 46%;
+      right: 13%;
+      top: 24%;
+      border-radius: 64% 36% 50% 50%;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .map-pin {
+      position: absolute;
+      left: 48%;
+      top: 52%;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 0 10px rgba(0, 191, 243, 0.15);
+    }
+
+    .gallery {
+      background:
+        linear-gradient(180deg, rgba(5, 5, 5, 0.96), rgba(30, 30, 30, 0.98));
+      color: var(--white);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .gallery-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .gallery-image {
+      aspect-ratio: 4/3;
+      background:
+        linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.68)),
+        var(--image) center/cover no-repeat,
+        linear-gradient(135deg, #333, #6e6e6e);
+      filter: grayscale(100%);
+    }
+
+  .gallery-image-1 { --image: url('./assets/galvanizado-piezas.jpg'); }
+  .gallery-image-2 { --image: url('./assets/piezas-metalicas.jpg'); }
+  .gallery-image-3 { --image: url('./assets/planta-industrial.jpg'); }
+  .gallery-image-4 { --image: url('./assets/hero-galvanizado.jpg'); }
+  .gallery-image-5 { --image: url('./assets/batea-industrial.jpg'); }
+  .gallery-image-6 { --image: url('./assets/galvanizado-piezas.jpg'); }
+
+    .gallery-caption {
+      padding: 14px 14px 16px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .faq {
+      background: var(--white);
+    }
+
+    .accordion {
+      display: grid;
+      gap: 12px;
+    }
+
+    .accordion-item {
+      border: 1px solid #dddddd;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      text-align: left;
+      padding: 16px 18px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .accordion-trigger span:last-child {
+      color: var(--cyan);
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    .accordion-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease;
+    }
+
+    .accordion-panel p {
+      padding: 0 18px 16px;
+      color: var(--gray);
+      font-size: 0.94rem;
+    }
+
+    .conversion {
+      color: var(--white);
+      background:
+        linear-gradient(115deg, rgba(5, 5, 5, 0.87), rgba(5, 5, 5, 0.64)),
+  url('./assets/planta-industrial.jpg') center/cover no-repeat,
+        linear-gradient(135deg, #0c0c0c, #333333);
+      text-align: center;
+    }
+
+    .conversion .section-subtitle {
+      margin-left: auto;
+      margin-right: auto;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .conversion-actions {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .contact {
+      background: #111;
+      color: var(--white);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .contact-details {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, 0.86);
+      overflow-wrap: anywhere;
+    }
+
+    .map-placeholder {
+      margin-top: 14px;
+      border-radius: 14px;
+      min-height: 180px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.03);
+      overflow: hidden;
+    }
+
+    .map-placeholder iframe {
+      width: 100%;
+      min-height: 180px;
+      height: 100%;
+      border: 0;
+      display: block;
+      filter: grayscale(18%);
+    }
+
+    .map-open-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 10px;
+      color: var(--cyan);
+      font-size: 0.86rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .contact-form {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.03);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+      overflow: hidden;
+    }
+
+    .contact-form form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-form .btn-primary {
+      margin-top: 4px;
+    }
+
+    .field.full .btn {
+      width: 100%;
+    }
+
+    .microcopy {
+      font-size: 0.86rem;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 16px;
+    }
+
+    .field-help {
+      display: block;
+      margin-top: 2px;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.82rem;
+    }
+
+    .footer-brand-text {
+      margin-top: 12px;
+      max-width: 42ch;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      align-items: start;
+    }
+
+    .field {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.82rem;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.84);
+      font-weight: 600;
+    }
+
+    input,
+    textarea,
+    select {
+      background: rgba(255, 255, 255, 0.98);
+      color: #1c1c1c;
+      border: 1px solid #d7d7d7;
+      border-radius: 10px;
+      padding: 12px 12px;
+      font: inherit;
+      font-size: 0.93rem;
+      min-height: 44px;
+      width: 100%;
+    }
+
+    input[type="file"] {
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid #cfd6da;
+      padding: 9px 10px;
+      line-height: 1.3;
+    }
+
+    input[type="file"]::file-selector-button {
+      border: 1px solid #bfc8cc;
+      background: #f3f6f8;
+      color: #1c1c1c;
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-right: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    input[type="file"]:focus-visible::file-selector-button {
+      border-color: var(--cyan);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: 3px solid rgba(0, 191, 243, 0.26);
+      border-color: var(--cyan);
+    }
+
+    .footer {
+      background: var(--black);
+      color: rgba(255, 255, 255, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 36px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 22px;
+      margin-bottom: 22px;
+    }
+
+    .footer h3 {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+
+    .footer p,
+    .footer li,
+    .footer a {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 14px;
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .floating-wa {
+      position: fixed;
+      right: 18px;
+      bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+      z-index: 1200;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #25d366;
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+      transition: var(--transition);
+      border: 2px solid rgba(255, 255, 255, 0.65);
+      font-size: 1.4rem;
+    }
+
+    .floating-wa:hover {
+      transform: translateY(-4px) scale(1.04);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .service-grid,
+      .capacity-layout,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 26px;
+      }
+
+      .cards-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .industry-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .timeline {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .timeline::before {
+        display: none;
+      }
+
+      .step {
+        min-height: 190px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      :root {
+        --header-height: 76px;
+      }
+
+      .nav,
+      .header-actions .btn-whatsapp-mini,
+      .header-actions .btn-primary {
+        display: none;
+      }
+
+      .mobile-toggle {
+        display: inline-flex;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .contact-grid {
+        gap: 16px;
+      }
+
+      .contact-form {
+        order: -1;
+      }
+
+      .hero-grid {
+        padding: 64px 0 58px;
+      }
+
+      .hero-actions .btn {
+        min-width: 0;
+      }
+
+      .industry-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        padding: 18px 16px 16px 46px;
+        min-height: 0;
+      }
+
+      .step-number {
+        top: 18px;
+        left: 14px;
+      }
+
+      .step h3 {
+        min-height: 0;
+      }
+
+      .step::before {
+        content: "";
+        position: absolute;
+        left: 23px;
+        top: 40px;
+        bottom: -12px;
+        width: 2px;
+        background: rgba(0, 191, 243, 0.5);
+      }
+
+      .timeline .step:last-child::before {
+        display: none;
+      }
+
+      .form-grid,
+      .capacity-blocks {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .hero h1 {
+        font-size: clamp(1.65rem, 7.4vw, 2.4rem);
+      }
+
+      .hero p {
+        font-size: 0.98rem;
+      }
+
+      .cards-4,
+      .industry-grid,
+      .gallery-grid,
+      .footer-grid,
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .hero-actions,
+      .conversion-actions {
+        width: 100%;
+      }
+
+      .chip {
+        font-size: 0.72rem;
+      }
+
+      .hero-grid {
+        padding: 48px 0 42px;
+      }
+
+      .hero h1 {
+        letter-spacing: 0.01em;
+      }
+
+      .hero-actions {
+        gap: 10px;
+        margin-bottom: 22px;
+      }
+
+      .stat-card {
+        padding: 14px;
+      }
+
+      .stat-card strong {
+        font-size: 0.92rem;
+      }
+
+      .stat-card span {
+        font-size: 0.8rem;
+      }
+
+      .timeline {
+        gap: 10px;
+      }
+
+      .step {
+        border-radius: 12px;
+      }
+
+      .step p {
+        font-size: 0.84rem;
+      }
+
+      label {
+        font-size: 0.78rem;
+      }
+
+      input,
+      textarea,
+      select {
+        font-size: 16px;
+      }
+
+      textarea {
+        min-height: 112px;
+      }
+
+      .microcopy {
+        font-size: 0.82rem;
+      }
+
+      .service-media,
+      .about-map {
+        min-height: 240px;
+      }
+
+      .contact-form,
+      .contact-details,
+      .capacity-main {
+        padding: 18px;
+      }
+
+      .contact-form {
+        border-radius: 12px;
+      }
+
+      .floating-wa {
+        width: 50px;
+        height: 50px;
+        right: 12px;
+        font-size: 1.25rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      :root {
+        --header-height: 70px;
+      }
+
+      .section {
+        padding: 64px 0;
+      }
+
+      .logo img {
+        height: 34px;
+      }
+
+      .logo-text {
+        display: none;
+      }
+
+      .mobile-toggle {
+        width: 40px;
+        height: 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.45rem, 8vw, 1.95rem);
+        line-height: 1.12;
+      }
+
+      .hero p,
+      .section-subtitle {
+        font-size: 0.94rem;
+      }
+
+      .hero p {
+        margin-bottom: 22px;
+      }
+
+      .chip {
+        padding: 6px 10px;
+      }
+
+      .step h3 {
+        font-size: 0.8rem;
+      }
+
+      .step p {
+        font-size: 0.82rem;
+      }
+
+      .contact-list {
+        gap: 8px;
+        font-size: 0.9rem;
+      }
+
+      .form-grid {
+        gap: 12px;
+      }
+
+      input,
+      textarea,
+      select,
+      input[type="file"] {
+        border-radius: 8px;
+      }
+
+      .map-placeholder {
+        min-height: 150px;
+      }
+
+      .field-help {
+        font-size: 0.78rem;
+      }
+
+      .footer {
+        padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-grid {
+        padding: 42px 0 34px;
+      }
+
+      .hero h1 {
+        font-size: clamp(1.34rem, 8.8vw, 1.72rem);
+      }
+
+      .section-title {
+        font-size: clamp(1.3rem, 6vw, 1.55rem);
+      }
+
+      .btn {
+        padding: 12px 14px;
+        font-size: 0.82rem;
+      }
+
+      .floating-wa {
+        width: 46px;
+        height: 46px;
+        right: 10px;
+      }
+
+      .accordion-trigger {
+        font-size: 0.9rem;
+        padding: 14px;
+      }
+
+      .step {
+        padding: 16px 12px 14px 42px;
+      }
+
+      .step-number {
+        left: 12px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Inicio Galflux">
+  <img src="./assets/logo.png" alt="Logo Galflux" />
+        <span class="logo-text">Galflux</span>
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#capacidad">Capacidad</a>
+        <a href="#industrias">Industrias</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#empresa">Empresa</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-primary" href="#contacto">Solicitar cotización</a>
+        <a class="btn-whatsapp-mini" href="https://wa.me/5403516132135" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+          <span aria-hidden="true">✆</span>
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileMenu" aria-label="Abrir menú de navegación">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#capacidad">Capacidad</a></li>
+        <li><a href="#industrias">Industrias</a></li>
+        <li><a href="#proceso">Proceso</a></li>
+        <li><a href="#empresa">Empresa</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a class="btn btn-primary" href="#contacto">Solicitar cotización</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="hero">
+      <div class="container hero-grid">
+        <div class="reveal">
+          <span class="chip">Galvanizado industrial en Córdoba</span>
+          <h1>Galvanizado por inmersión en caliente para piezas industriales de alta exigencia</h1>
+          <p>Protección anticorrosiva durable, atención técnica personalizada y capacidad operativa para obras, agro, industria, infraestructura y metalmecánica.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacto">Solicitar cotización</a>
+            <a class="btn btn-outline" href="#contacto">Enviar consulta técnica</a>
+          </div>
+        </div>
+
+        <div class="stats-grid reveal" aria-label="Datos clave de Galflux">
+          <article class="stat-card">
+            <strong>+15 años</strong>
+            <span>de trayectoria</span>
+          </article>
+          <article class="stat-card">
+            <strong>Córdoba Capital</strong>
+            <span>ubicación estratégica</span>
+          </article>
+          <article class="stat-card">
+            <strong>Batea de gran longitud</strong>
+            <span>capacidad operativa</span>
+          </article>
+          <article class="stat-card">
+            <strong>Seguimiento</strong>
+            <span>del material en proceso</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section value-strip" id="propuesta">
+      <div class="container">
+        <h2 class="section-title reveal">Confiabilidad industrial para proteger estructuras metálicas contra la corrosión</h2>
+        <div class="cards-4">
+          <article class="value-card reveal">
+            <h3>Protección duradera</h3>
+            <p>El recubrimiento por zinc extiende la vida útil de las piezas expuestas a ambientes industriales, humedad y uso intensivo.</p>
+          </article>
+          <article class="value-card reveal">
+            <h3>Capacidad para piezas de gran porte</h3>
+            <p>Infraestructura operativa pensada para proyectos con componentes estructurales y requerimientos de mayor escala.</p>
+          </article>
+          <article class="value-card reveal">
+            <h3>Seguimiento del material</h3>
+            <p>Comunicación clara durante el proceso para coordinar entregas, tiempos y control técnico del tratamiento.</p>
+          </article>
+          <article class="value-card reveal">
+            <h3>Ubicación estratégica</h3>
+            <p>Planta en Córdoba Capital para atender la región centro y optimizar logística con empresas de distintas provincias.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section service" id="servicios">
+      <div class="container service-grid">
+        <div class="reveal">
+          <span class="chip">Servicio principal</span>
+          <h2 class="section-title">Galvanizado por inmersión en caliente</h2>
+          <p class="section-subtitle">Un tratamiento industrial que recubre el acero con zinc fundido para extender su vida útil, mejorar su resistencia frente a la corrosión y reducir costos de mantenimiento.</p>
+          <ul class="benefits">
+            <li>Alta resistencia a la corrosión</li>
+            <li>Protección interna y externa de la pieza</li>
+            <li>Ideal para estructuras metálicas, agro, infraestructura y herrería industrial</li>
+            <li>Menor mantenimiento a largo plazo</li>
+            <li>Terminación uniforme y resistente</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary">Consultar por mi tipo de pieza</a>
+        </div>
+        <div class="service-media reveal" role="img" aria-label="Proceso industrial de galvanizado por inmersión en caliente"></div>
+      </div>
+    </section>
+
+    <section class="section industries" id="industrias">
+      <div class="container">
+        <h2 class="section-title reveal">Soluciones para sectores que necesitan resistencia, durabilidad y cumplimiento técnico</h2>
+        <div class="industry-grid">
+          <article class="industry-card reveal"><h3>Agroindustria</h3><p>Estructuras para silos, corrales y equipamiento expuesto al clima.</p></article>
+          <article class="industry-card reveal"><h3>Construcción</h3><p>Vigas, barandas y estructuras de obra con alta exigencia anticorrosiva.</p></article>
+          <article class="industry-card reveal"><h3>Infraestructura</h3><p>Componentes metálicos para puentes, señalización y obras públicas.</p></article>
+          <article class="industry-card reveal"><h3>Energía</h3><p>Soportes, bandejas y piezas para instalaciones de generación y distribución.</p></article>
+          <article class="industry-card reveal"><h3>Metalúrgicas</h3><p>Piezas seriadas para líneas de fabricación y montaje técnico.</p></article>
+          <article class="industry-card reveal"><h3>Herrería industrial</h3><p>Rejas, cerramientos y estructuras metálicas de uso intensivo.</p></article>
+          <article class="industry-card reveal"><h3>Equipamiento urbano</h3><p>Mobiliario, columnas y protecciones para espacios públicos y privados.</p></article>
+          <article class="industry-card reveal"><h3>Transporte y logística</h3><p>Componentes para racks, plataformas y soluciones de movimiento de carga.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section capacity" id="capacidad">
+      <div class="container capacity-layout">
+        <div class="capacity-main reveal">
+          <h2 class="section-title">Capacidad preparada para proyectos industriales</h2>
+          <p>Combinamos infraestructura, criterio técnico y coordinación operativa para responder a requerimientos productivos de múltiples sectores B2B.</p>
+          <div class="capacity-blocks">
+            <article class="capacity-item"><h3>Batea de gran longitud</h3><p>Capacidad para piezas de mayor porte y proyectos de escala industrial.</p></article>
+            <article class="capacity-item"><h3>Tratamiento para piezas especiales</h3><p>Evaluación técnica para geometrías y requerimientos de alta exigencia.</p></article>
+            <article class="capacity-item"><h3>Desarrollo de nuevos productos</h3><p>Soporte técnico para empresas que integran nuevas líneas metálicas.</p></article>
+            <article class="capacity-item"><h3>Atención directa con producción</h3><p>Comunicación ágil con el equipo responsable del proceso en planta.</p></article>
+            <article class="capacity-item"><h3>Coordinación de recepción y retiro</h3><p>Planificación logística para ordenar ingresos y salidas del material.</p></article>
+            <article class="capacity-item"><h3>Asesoramiento sobre preparación previa de piezas</h3><p>Indicaciones técnicas para optimizar resultados antes del galvanizado.</p></article>
+          </div>
+        </div>
+        <div class="capacity-visual reveal" role="img" aria-label="Vista industrial de batea de galvanizado de gran longitud"></div>
+      </div>
+    </section>
+
+    <section class="section process" id="proceso">
+      <div class="container">
+        <h2 class="section-title reveal">Cómo trabajamos</h2>
+        <p class="section-subtitle reveal">Un proceso claro para evaluar factibilidad técnica, coordinar materiales y entregar piezas galvanizadas con criterios industriales.</p>
+        <div class="timeline">
+          <article class="step reveal">
+            <span class="step-number">1</span>
+            <h3>Recepción de consulta o planos</h3>
+            <p>Recibimos fotos, medidas, cantidades o documentación técnica inicial para comprender el requerimiento.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">2</span>
+            <h3>Evaluación técnica</h3>
+            <p>Analizamos tipo de pieza, dimensiones y condiciones de proceso para validar factibilidad.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">3</span>
+            <h3>Cotización</h3>
+            <p>Enviamos propuesta con alcance del servicio y condiciones operativas.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">4</span>
+            <h3>Recepción del material</h3>
+            <p>Coordinamos ingreso a planta según programación de producción.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">5</span>
+            <h3>Galvanizado por inmersión en caliente</h3>
+            <p>Ejecutamos el tratamiento con seguimiento del material durante el proceso.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">6</span>
+            <h3>Retiro o coordinación logística</h3>
+            <p>Confirmamos entrega y salida del material según planificación acordada.</p>
+          </article>
+        </div>
+        <a href="#contacto" class="btn btn-primary">Iniciar una consulta técnica</a>
+      </div>
+    </section>
+
+    <section class="section about" id="empresa">
+      <div class="container about-grid">
+        <div class="reveal">
+          <h2 class="section-title">Una empresa cordobesa especializada en galvanizado industrial</h2>
+          <p class="section-subtitle">Galflux es una empresa cordobesa con más de 15 años dedicada al galvanizado por inmersión en caliente. Nacida a partir de una trayectoria vinculada a la investigación y desarrollo del galvanizado, hoy acompaña a empresas de la región centro del país con soluciones confiables, atención personalizada y foco en la mejora continua.</p>
+          <a href="#contacto" class="btn btn-dark">Solicitar cotización</a>
+        </div>
+        <div class="about-map reveal" role="img" aria-label="Visual técnico de ubicación estratégica en Córdoba, Argentina">
+          <span class="map-pin" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="galeria">
+      <div class="container">
+        <h2 class="section-title reveal">Piezas, estructuras y soluciones galvanizadas</h2>
+        <div class="gallery-grid">
+          <figure class="gallery-card reveal">
+            <div class="gallery-image gallery-image-1" role="img" aria-label="Estructuras metálicas galvanizadas"></div>
+            <figcaption class="gallery-caption">Estructuras metálicas</figcaption>
+          </figure>
+          <figure class="gallery-card reveal">
+            <div class="gallery-image gallery-image-2" role="img" aria-label="Piezas seriadas galvanizadas"></div>
+            <figcaption class="gallery-caption">Piezas seriadas</figcaption>
+          </figure>
+          <figure class="gallery-card reveal">
+            <div class="gallery-image gallery-image-3" role="img" aria-label="Componentes para agro galvanizados"></div>
+            <figcaption class="gallery-caption">Componentes para agro</figcaption>
+          </figure>
+          <figure class="gallery-card reveal">
+            <div class="gallery-image gallery-image-4" role="img" aria-label="Soportes y perfiles industriales"></div>
+            <figcaption class="gallery-caption">Soportes y perfiles</figcaption>
+          </figure>
+          <figure class="gallery-card reveal">
+            <div class="gallery-image gallery-image-5" role="img" aria-label="Desarrollos especiales de galvanizado"></div>
+            <figcaption class="gallery-caption">Desarrollos especiales</figcaption>
+          </figure>
+          <figure class="gallery-card reveal">
+            <div class="gallery-image gallery-image-6" role="img" aria-label="Proyectos industriales galvanizados"></div>
+            <figcaption class="gallery-caption">Proyectos industriales</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container">
+        <h2 class="section-title reveal">Preguntas frecuentes</h2>
+        <div class="accordion" id="accordionFaq">
+          <article class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>¿Qué piezas pueden galvanizarse por inmersión en caliente?</span>
+                <span aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="accordion-panel"><p>Se pueden evaluar estructuras, perfiles, soportes, piezas seriadas y componentes para sectores agro, construcción, infraestructura e industria metalmecánica.</p></div>
+          </article>
+          <article class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>¿Qué información necesito enviar para cotizar?</span>
+                <span aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="accordion-panel"><p>Recomendamos enviar medidas aproximadas, cantidad de piezas, tipo de uso y, si es posible, fotos o planos para una evaluación técnica más precisa.</p></div>
+          </article>
+          <article class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>¿Trabajan con piezas de gran tamaño?</span>
+                <span aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="accordion-panel"><p>Sí, contamos con capacidad operativa para piezas de gran porte y analizamos cada caso según dimensiones y requerimientos de proceso.</p></div>
+          </article>
+          <article class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>¿Puedo enviar planos o fotos de las piezas?</span>
+                <span aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="accordion-panel"><p>Sí, podés adjuntar documentación técnica, imágenes o referencias. Esa información acelera la validación de factibilidad y tiempos.</p></div>
+          </article>
+          <article class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>¿Dónde está ubicada la planta?</span>
+                <span aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="accordion-panel"><p>La planta está ubicada en Córdoba Capital, con acceso estratégico para atender empresas de la provincia y de otras regiones del país.</p></div>
+          </article>
+          <article class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>¿El galvanizado reduce el mantenimiento?</span>
+                <span aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="accordion-panel"><p>El recubrimiento galvanizado mejora la resistencia frente a la corrosión y ayuda a reducir intervenciones de mantenimiento a lo largo del tiempo.</p></div>
+          </article>
+          <article class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>¿Atienden empresas del interior de Córdoba y otras provincias?</span>
+                <span aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="accordion-panel"><p>Sí, trabajamos con clientes del interior de Córdoba y de otras provincias, coordinando logística y retiro según cada proyecto.</p></div>
+          </article>
+          <article class="accordion-item reveal">
+            <h3>
+              <button class="accordion-trigger" aria-expanded="false">
+                <span>¿Qué preparación previa necesita el material?</span>
+                <span aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div class="accordion-panel"><p>Brindamos asesoramiento sobre limpieza, perforaciones, ventilaciones y condiciones recomendadas para optimizar el resultado final del galvanizado.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section conversion" id="conversion">
+      <div class="container reveal">
+        <h2 class="section-title">¿Necesitás galvanizar piezas metálicas para tu empresa o proyecto?</h2>
+        <p class="section-subtitle">Enviá medidas, cantidades, fotos o planos y nuestro equipo evaluará la factibilidad técnica.</p>
+        <div class="conversion-actions">
+          <a href="#contacto" class="btn btn-primary">Solicitar cotización</a>
+          <a href="https://wa.me/5403516132135" target="_blank" rel="noopener" class="btn btn-outline">Enviar consulta por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contacto">
+      <div class="container contact-grid">
+        <aside class="contact-details reveal">
+          <h2 class="section-title">Contacto técnico y comercial</h2>
+          <p class="section-subtitle">Atención para empresas, proyectos y compras industriales.</p>
+          <ul class="contact-list">
+            <li><strong>Dirección:</strong> Jorge Ordóñez 441, Córdoba, Argentina</li>
+            <li><strong>Tel:</strong> +54 0351 6132135</li>
+            <li><strong>Tel:</strong> +54 0351 4948682</li>
+            <li><strong>Email:</strong> <a href="mailto:info@galflux.com.ar">info@galflux.com.ar</a></li>
+          </ul>
+          <div class="map-placeholder" aria-label="Mapa de ubicación de Galflux en Córdoba">
+            <iframe
+              title="Mapa de Galflux en Córdoba"
+              loading="lazy"
+              src="https://maps.google.com/maps?q=Jorge%20Ord%C3%B3%C3%B1ez%20441%2C%20C%C3%B3rdoba%2C%20Argentina&t=&z=15&ie=UTF8&iwloc=&output=embed">
+            </iframe>
+          </div>
+          <a class="map-open-link" href="https://maps.app.goo.gl/fgxBWYEU697vcaYc9" target="_blank" rel="noopener" aria-label="Abrir ubicación de Galflux en Google Maps">
+            Ver en Google Maps
+          </a>
+        </aside>
+
+        <div class="contact-form reveal">
+          <p class="microcopy">Cuanto más detalle nos envíes, mejor podremos evaluar la factibilidad técnica y preparar una respuesta precisa.</p>
+          <form action="#" method="post" enctype="multipart/form-data">
+            <div class="form-grid">
+              <div class="field">
+                <label for="nombre">Nombre y apellido</label>
+                <input id="nombre" name="nombre" type="text" autocomplete="name" required />
+              </div>
+              <div class="field">
+                <label for="empresa">Empresa</label>
+                <input id="empresa" name="empresa" type="text" autocomplete="organization" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="telefono">Teléfono / WhatsApp</label>
+                <input id="telefono" name="telefono" type="tel" autocomplete="tel" required />
+              </div>
+              <div class="field">
+                <label for="tipo-pieza">Tipo de pieza</label>
+                <input id="tipo-pieza" name="tipo_pieza" type="text" required />
+              </div>
+              <div class="field">
+                <label for="medidas">Medidas aproximadas</label>
+                <input id="medidas" name="medidas" type="text" placeholder="Ej: 2.5m x 1.2m" />
+              </div>
+              <div class="field">
+                <label for="cantidad">Cantidad</label>
+                <input id="cantidad" name="cantidad" type="number" min="1" />
+              </div>
+              <div class="field">
+                <label for="archivo">Adjuntar archivo</label>
+                <input id="archivo" name="archivo" type="file" aria-describedby="ayuda-archivo" />
+              </div>
+              <div class="field full">
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Podés incluir uso de la pieza, condiciones de exposición y plazos estimados." required></textarea>
+                <small id="ayuda-archivo" class="field-help">Podés adjuntar planos o fotos para agilizar la evaluación técnica.</small>
+              </div>
+              <div class="field full">
+                <button type="submit" class="btn btn-primary">Enviar consulta</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#top" class="logo" aria-label="Volver arriba">
+            <img src="./assets/logo.png" alt="Logo Galflux" />
+            <span class="logo-text">Galflux</span>
+          </a>
+          <p class="footer-brand-text">Galvanizado por inmersión en caliente con enfoque industrial, trazabilidad operativa y atención técnica para proyectos B2B.</p>
+        </div>
+        <div>
+          <h3>Accesos rápidos</h3>
+          <ul class="footer-links">
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#industrias">Industrias</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contacto</h3>
+          <ul class="footer-links">
+            <li>Jorge Ordóñez 441, Córdoba</li>
+            <li>+54 0351 6132135</li>
+            <li>+54 0351 4948682</li>
+            <li><a href="mailto:info@galflux.com.ar">info@galflux.com.ar</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="copyright">© 2026 Galflux. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <a class="floating-wa" href="https://wa.me/5403516132135" target="_blank" rel="noopener" aria-label="Abrir WhatsApp de Galflux">
+    <span aria-hidden="true">🟢</span>
+  </a>
+
+  <script>
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    if (mobileToggle && mobileMenu) {
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        mobileToggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      mobileMenu.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+        const target = document.querySelector(targetId);
+        if (!target) return;
+        e.preventDefault();
+        const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
+        const top = target.getBoundingClientRect().top + window.scrollY - headerHeight + 2;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    reveals.forEach((el) => observer.observe(el));
+
+    const accordionButtons = document.querySelectorAll('.accordion-trigger');
+    accordionButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        const panel = button.closest('.accordion-item')?.querySelector('.accordion-panel');
+
+        accordionButtons.forEach((btn) => {
+          btn.setAttribute('aria-expanded', 'false');
+          const otherPanel = btn.closest('.accordion-item')?.querySelector('.accordion-panel');
+          if (otherPanel) {
+            otherPanel.style.maxHeight = null;
+            const icon = btn.querySelector('span:last-child');
+            if (icon) icon.textContent = '+';
+          }
+        });
+
+        if (!expanded && panel) {
+          button.setAttribute('aria-expanded', 'true');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          const icon = button.querySelector('span:last-child');
+          if (icon) icon.textContent = '−';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
